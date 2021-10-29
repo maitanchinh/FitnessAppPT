@@ -1,20 +1,24 @@
-/* eslint-disable react-native/no-inline-styles */
-import {useNavigation, useRoute} from '@react-navigation/core';
-import React, {useState} from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { useNavigation, useRoute } from "@react-navigation/core";
+import React, { useState } from "react";
+import { Dimensions, FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RNPPickerSelect from 'react-native-picker-select';
 class PersonalProfile extends React.Component {
+    // const route = useRoute();
+    // const navigation = useNavigation();
+    // const [openCity, setOpenCity] = useState(false);
+    // const [cityValue, setCityValue] = useState('Hochiminh');
+    // const [city, setCity] = useState([
+    //     { label: 'Ho Chi Minh', value: 'Hochiminh' },
+    //     { label: 'Ha Noi', value: 'Hanoi' },
+    // ]);
+    // const [openDistrict, setOpenDistrict] = useState(false);
+    // const [districtValue, setDistrictValue] = useState('quan1');
+    // const [district, setDistrict] = useState([
+    //     { label: 'Quan 1', value: 'quan1' },
+    //     { label: 'Quan 2', value: 'quan2' },
+    // ]);
     render() {
         return (
             <SafeAreaView style={{ backgroundColor: 'white' }}>
@@ -59,6 +63,21 @@ class PersonalProfile extends React.Component {
                                 <Text style={{ marginLeft: 40 }}>
                                     {this.props.route.params.name}
                                 </Text>
+                                {/* <TextInput
+                            defaultValue={route.params.name}
+                            style={{ marginLeft: 40 }}
+                        /> */}
+                                {/* <OutlineInput
+                        label="Fullname"
+                        value={route.params.name}
+                        activeBorderColor='#97B2FF'
+                        activeLabelColor='#97B2FF'
+                        activeValueColor='black'
+                        passiveLabelColor='#5B5B5B'
+                        passiveBorderColor='#97B2FF'
+                        passiveValueColor='black'
+                    /> */}
+
                             </View>
                         </View>
                         <View style={{ height: 40, justifyContent: 'flex-end', marginBottom: 20 }}>
@@ -201,6 +220,12 @@ class PersonalProfile extends React.Component {
                                 </Text>
                             </View>
                         </View>
+
+                        {/* <OutlineInput
+                    label="Fullname"
+                    value={route.params.name}
+                    passiveLabelColor='black'
+                /> */}
                     </View>
                     <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Address</Text>
                     <View style={{ alignItems: 'center' }}>
@@ -322,9 +347,9 @@ class PersonalProfile extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-  },
-});
+    container: {
+        backgroundColor: 'white'
+    }
+})
 
 export default PersonalProfile;

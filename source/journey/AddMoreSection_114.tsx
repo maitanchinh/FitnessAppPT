@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState } from 'react';
 import RNPPickerSelect from 'react-native-picker-select';
+
 
 import {
   SafeAreaView,
@@ -13,22 +14,22 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-import {useNavigation, useRoute} from '@react-navigation/core';
+import { useNavigation, useRoute } from '@react-navigation/core';
 const AddSection_114 = () => {
   const navigation = useNavigation();
   const route = useRoute();
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 8}}>
-        <View style={{marginHorizontal: 10}}>
-          <Text style={{fontSize: 22, fontWeight: 'bold', marginVertical: 10}}>
+      <View style={{ flex: 8 }}>
+        <View style={{ marginHorizontal: 10 }}>
+          <Text style={{ fontSize: 22, fontWeight: 'bold', marginVertical: 10 }}>
             Your trailer Video
           </Text>
           <Image
             source={require('../../asserts/images/workout.jpeg')}
             style={styles.picture}
           />
-          <Text style={{fontSize: 19, fontWeight: 'bold', marginVertical: 10}}>
+          <Text style={{ fontSize: 19, fontWeight: 'bold', marginVertical: 10 }}>
             Description
           </Text>
           <TextInput
@@ -48,32 +49,33 @@ const AddSection_114 = () => {
               marginVertical: 30,
               justifyContent: 'space-between',
             }}>
-            <Text style={{fontSize: 19, fontWeight: 'bold'}}>Difficulty</Text>
-            <RNPPickerSelect
-              placeholder={{
-                label: 'Select level',
-              }}
-              style={{}}
-              onValueChange={value => console.log(value)}
-              items={[
-                {label: 'Beginner', value: 'beginner'},
-                {label: 'Professional', value: 'professional'},
-              ]}
-            />
+            <Text style={{ fontSize: 19, fontWeight: 'bold' }}>Difficulty</Text>
+              <RNPPickerSelect
+              
+                placeholder={{
+                  label: 'Select level',
+                }}
+                style={{}}
+                onValueChange={(value) => console.log(value)}
+                items={[
+                  { label: 'Beginner', value: 'beginner' },
+                  { label: 'Professional', value: 'professional' }
+                ]}
+              />
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{fontSize: 19, fontWeight: 'bold'}}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Text style={{ fontSize: 19, fontWeight: 'bold' }}>
               Total Calories Burn
             </Text>
             <TextInput
-              style={{fontSize: 20, color: '#676264'}}
+              style={{ fontSize: 20, color: '#676264' }}
               placeholder="Enter amount"
             />
           </View>
         </View>
       </View>
 
-      <View style={{flex: 2, justifyContent: 'flex-end'}}>
+      <View style={{ flex: 2, justifyContent: 'flex-end' }}>
         <View
           style={{
             flexDirection: 'row',
@@ -81,7 +83,7 @@ const AddSection_114 = () => {
             marginBottom: 30,
           }}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Details')}
+          onPress={() => navigation.navigate('Add More Section 115')}
             style={{
               backgroundColor: '#97B2FF',
               borderRadius: 35,

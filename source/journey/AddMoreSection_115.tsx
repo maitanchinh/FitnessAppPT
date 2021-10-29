@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
@@ -13,120 +12,39 @@ import {
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import {useNavigation, useRoute} from '@react-navigation/core';
+// import { useNavigation } from '@react-navigation/core';
 
 const AddSection_115 = () => {
-  const route = useRoute();
-  const navigation = useNavigation();
-  const data = [
-    {
-      id: 1,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 2,
-      name: 'Squats',
-      image: require('../../asserts/images/squats.png'),
-      calo: 100,
-      time: 12,
-      isChoose: true,
-    },
-    {
-      id: 3,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 4,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 5,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 6,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 7,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 8,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 9,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 10,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 11,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-    {
-      id: 12,
-      name: 'Warm up',
-      image: require('../../asserts/images/warmup.png'),
-      calo: 100,
-      time: 12,
-      isChoose: false,
-    },
-  ];
-  let list;
-  function getData() {
-    route.params.exercises.forEach(id => {
-      list = data.filter(item => {
-        return item.id === id;
-      });
-    });
-  }
+  // const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          height: '6%',
+          width: '100%',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+        <TouchableOpacity
+          style={{
+            height: '100%',
+            alignItems: 'center',
+            flexDirection: 'row',
+            paddingLeft: 10,
+          }}
+          onPress={() => {
+        // navigation.goBack()
+          }}>
+          {/* <Image source={require('../asserts/icons/back-button.png')} style={{ flex: 1 }} resizeMode="contain" /> */}
+          <Ionicons name="chevron-back" size={30} />
+          <Text style={{fontSize: 20, paddingLeft: 10, fontWeight: '500'}}>
+            Back
+          </Text>
+        </TouchableOpacity>
+      </View>
       <ScrollView>
         <View style={{marginHorizontal: 10, marginVertical: 10}}>
           <Image
@@ -225,29 +143,6 @@ const AddSection_115 = () => {
             <Text style={{fontSize: 22, fontWeight: 'bold'}}>Exercises</Text>
             <Text style={{color: '#676264'}}>5 Session</Text>
           </View>
-          {/* <ScrollView horizontal={true} scrollEnabled={false}>
-            <FlatList
-              data={}
-              renderItem={({ item }) =>
-                <View style={{ marginBottom: 20 }}>
-                  <Text style={{ fontSize: 22, marginBottom: 10 }}>Session 2</Text>
-                  <View style={{ flexDirection: 'row', paddingHorizontal: 10 }}>
-                    <Image
-                      source={item.image}
-                      style={{
-                        height: 70,
-                        width: 70,
-                        borderRadius: 35,
-                        resizeMode: 'contain',
-                      }}
-                    />
-                    <View style={{ marginHorizontal: 30 }}>
-                      <Text style={{ fontWeight: 'bold' }}>item.name</Text>
-                      <Text>{item.time}x</Text>
-                    </View>
-                  </View>
-                </View>} />
-          </ScrollView> */}
           <View style={{marginBottom: 20}}>
             <Text style={{fontSize: 22, marginBottom: 10}}>Session 1</Text>
             <View style={{flexDirection: 'row', paddingHorizontal: 10}}>
@@ -286,10 +181,6 @@ const AddSection_115 = () => {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <TouchableOpacity
-            onPress={() => navigation.reset({
-              index: 0,
-              routes: [{name: 'Create Journey'}],
-            })}
               style={{
                 backgroundColor: '#97B2FF',
                 borderRadius: 35,

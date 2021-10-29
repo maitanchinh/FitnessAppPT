@@ -1,92 +1,61 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Button, View, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import { Button ,View, StyleSheet, SafeAreaView,ScrollView } from 'react-native';
 import JourneyComponent from './journey_component';
-import {useNavigation} from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 
-const Journey = () => {
+const Journey = () =>{
   const navigation = useNavigation();
   return (
     <SafeAreaView style={style.container}>
-      <ScrollView style={{paddingTop: 50}}>
-        {JourneyComponent('Hành trình giảm cân', DATA1)}
-        {JourneyComponent('Hành trình rèn luyện sức khỏe', DATA2)}
+    <ScrollView style={{paddingTop: 50}}>
+      {JourneyComponent('Lose Weight Journey',DATA1)}
+      {JourneyComponent('For Health Journey',DATA1)}
         <View style={style.custombutton}>
-          <Button
-            title="Tạo hành trình mới"
-            onPress={() => {
-              navigation.navigate('Create Journey');
-            }}
-          />
-        </View>
-      </ScrollView>
+            <Button title='Create Journey' onPress={() => {navigation.navigate('Create Journey')}} />
+          </View>
+    </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  custombutton: {
+  custombutton:{
     marginTop: 50,
     color: 'white',
-    backgroundColor: 'rgb(45,156,219)',
+    backgroundColor: "rgb(45,156,219)",
     borderRadius: 10,
     marginLeft: 75,
     width: 250,
     paddingHorizontal: 10,
-  },
-});
+  }
+  
+})
 const DATA1 = [
   {
     time: '01',
-    title: 'Tuần 1: Đánh Giá ',
+    title: 'Week 1: Assessment week ',
     description:
-      'Kiểm tra hiệu suất của bạn và cung cấp phản hồi cho huấn luyện viên',
+      'Test your performance and give your coach feedback',
   },
   {
     time: '02',
-    title: 'Tuần 2-5:Lên Lịch Tập Luyện',
-    description:
-      'Huấn luyện viên của bạn tùy chỉnh mỗi tuần mới dựa trên quá trình đào tạo của bạn',
+    title: 'Week 2-5: Custom training',
+    description: 'Your coach customizes each new week based on your traning',
   },
   {
     time: '03',
-    title: 'Tuần 6 : Đánh Giá Hiệu Quả ',
+    title: 'Week 6: Hell week ',
     description:
-      'Đánh giá lại những gì mình tập luyện xem có hiệu quả hay không',
+      'Week 6 is Hell week.Time to prove what you’ve acomplised',
   },
   {
     time: '04',
-    title: 'Kết Thúc Hành Trình',
-    description: 'Hãy chọn hành trình tiếp để tập luyện',
-  },
-];
-const DATA2 = [
-  {
-    time: '01',
-    title: 'Tuần 1: Đánh Giá ',
-    description:
-      'Kiểm tra hiệu suất của bạn và cung cấp phản hồi cho huấn luyện viên',
-  },
-  {
-    time: '02',
-    title: 'Tuần 2-5:Lên Lịch Tập Luyện',
-    description:
-      'Huấn luyện viên của bạn tùy chỉnh mỗi tuần mới dựa trên quá trình đào tạo của bạn',
-  },
-  {
-    time: '03',
-    title: 'Tuần 6 : Đánh Giá Hiệu Quả ',
-    description:
-      'Đánh giá lại những gì mình tập luyện xem có hiệu quả hay không',
-  },
-  {
-    time: '04',
-    title: 'Kết Thúc Hành Trình',
-    description: 'Hãy chọn hành trình tiếp để tập luyện',
+    title: 'Finish Journey',
+    description: 'Choose a new one or redo this one',
   },
 ];
 export default Journey;
