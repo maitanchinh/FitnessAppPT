@@ -1,6 +1,6 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { SafeAreaView, TouchableOpacity, Button,Dimensions ,TextInput ,Text ,View , StyleSheet } from 'react-native';
+import { ScrollView, TouchableOpacity, Button,Dimensions ,TextInput ,Text ,View , StyleSheet } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import { useNavigation } from '@react-navigation/core';
 
@@ -9,30 +9,12 @@ const { height, width } = Dimensions.get('window');
 const CreateJourney = () => {
   const navigation = useNavigation();
   return (
-    <SafeAreaView style={style.container}>
-        <View style={{ height: '6%', width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <TouchableOpacity style={{ height: '100%', aspectRatio: 1.8, alignItems: 'center', flexDirection: 'row', paddingLeft: 10 }}
-                onPress={() => {
-                    // navigation.goBack()
-                }}>
-                {/* <Image source={require('../asserts/icons/back-button.png')} style={{ flex: 1 }} resizeMode="contain" /> */}
-                <Ionicons name="chevron-back" size={30} />
-                <Text style={{ fontSize: 20, paddingLeft: 10, fontWeight: '500' }}>Back</Text>
-            </TouchableOpacity>
-        </View>
+    <ScrollView>
       <View style={{paddingTop:20,paddingHorizontal:20}}>
         <Text style={style.title}>Journey Name</Text>
-        <View>
-          <TextInput style={style.longInput}/>
-        </View>
-        <View style={style.Row}>
-          <Text style={style.title}>Price (VND)</Text>
-          <Text style={style.title}>Discount (%)</Text>
-        </View>
-        <View style={style.Row}>
-          <TextInput keyboardType='numeric' style={style.priceInput}/>
-          <TextInput keyboardType='numeric' style={style.discountInput}/>
-        </View>
+        <TextInput style={style.longInput}/>
+        <Text style={style.title}>Price (VND)</Text>
+        <TextInput keyboardType='numeric' style={style.priceInput}/>
         <View style={style.journey}>
             <Timeline
               data={DATA}
@@ -49,27 +31,34 @@ const CreateJourney = () => {
               }}
               descriptionStyle={{color: 'gray'}}
               options={{
-                style: {paddingTop: 5, position: 'absolute'},
+                style: {paddingTop: 5},
               }}
             />
           </View>
-          <View style={style.custombutton}>
-            <Button title='Add more' onPress={() => {navigation.navigate('Add More Section 111')}} />
-          </View>
-          <View style={{marginTop: 100,flexDirection: 'row', justifyContent: 'space-around'}}>
-            <TouchableOpacity onPress={() => {navigation.goBack}}
+          <TouchableOpacity onPress={() => {
+               navigation.navigate('Add More Section 111')
+            }}
+            style={style.custombutton}>
+              <Text style={{textAlign:'center'}}>Add more</Text>
+            </TouchableOpacity>
+          <View style={{marginTop: 50,flexDirection: 'row', justifyContent: 'space-around'}}>
+            <TouchableOpacity onPress={() => {
+               navigation.goBack
+            }}
             style={{borderWidth: 1, borderRadius: 35, height: 70, width: 120, 
             borderColor: '#97B2FF', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
               <Text style={{color: '#97B2FF'}}>Back</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate('Journey')}}
+            <TouchableOpacity onPress={() => {
+               navigation.navigate('Journey')
+            }}
             style={{backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 120,
             flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
               <Text>Done</Text>
             </TouchableOpacity>
           </View>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -97,22 +86,13 @@ const style = StyleSheet.create({
       borderWidth:1,
       borderRadius:8
     },
-    discountInput:{
-      paddingHorizontal: 10,
-      paddingVertical: 8,
-      fontSize: 18,
-      fontWeight: '600',
-      width: width*0.2,
-      borderColor:"rgb(45,156,219)",
-      borderWidth:1,
-      borderRadius:8
-    },
     Row:{
       flex: 1,
 		  flexDirection: 'row',
       justifyContent: 'space-between',
     },
     journey: {
+      height: height*0.4,
       marginTop: 50,
     },
     title: {
@@ -120,10 +100,6 @@ const style = StyleSheet.create({
       marginTop: 6,
       // marginLeft: 10,
       fontWeight: '600',
-    },
-    container: {
-        flex: 1,
-        backgroundColor: '#FFFFFF',
     },
     custombutton:{
       color: 'white',

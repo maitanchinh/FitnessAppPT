@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {Text ,View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 
-const JourneyComponent = (title:string,data:{
+const JourneyComponent = (titledata:string,data:{
     time: string;
     title: string;
     description: string;
@@ -44,9 +44,9 @@ const JourneyComponent = (title:string,data:{
           </View>);
         }
       }}>
-          <View style={{flexDirection: 'row',justifyContent: 'space-between',backgroundColor:'#bcbcbc',padding: 10,height:30}}>
-            <Text style={style.title}>{title}</Text>
-            {Arrow}
+          <View style={{backgroundColor:'#bcbcbc',padding: 10,height:45}}>
+            <Text style={style.title}>{titledata}</Text>
+            {/* <View>{Arrow}</View> */}
           </View>
       </TouchableOpacity>
       {Detail}
@@ -58,17 +58,17 @@ const style = StyleSheet.create({
   journey:{
     paddingHorizontal: 15,
     paddingTop: 15,
-    height: 300,
+    height: 350,
     position: 'relative'
   },
   title: {
     fontSize: 18,
-    marginTop: 6,
     // marginLeft: 10,
     fontWeight: '600',
   },
   ImageStyle:{
-    resizeMode:'stretch',
+    height:18,
+    width:18,
   }
 })
 export default JourneyComponent;
