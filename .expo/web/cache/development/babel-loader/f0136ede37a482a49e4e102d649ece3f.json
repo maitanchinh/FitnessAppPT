@@ -1,0 +1,1 @@
+{"ast":null,"code":"import icons from \"./icons\";\nexport { icons };","map":{"version":3,"sources":["D:/school/react native project/project/constants/index.tsx"],"names":["icons"],"mappings":"AAAA,OAAOA,KAAP;AACA,SAAQA,KAAR","sourcesContent":["import icons from './icons';\r\nexport {icons};"]},"metadata":{},"sourceType":"module"}
