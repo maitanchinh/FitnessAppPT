@@ -90,7 +90,8 @@ import CreateCampaign from './source/journey/CreateCampaign';
           </TouchableOpacity>
         )
       }}/>
-       <Tab.Screen name="Home" component={Home} options={{
+       
+       <Tab.Screen name="Exercises" component={Exercises} options={{
          headerRight: () => (
            <TouchableOpacity>
              <Ionicons name="chatbubble"
@@ -104,7 +105,7 @@ import CreateCampaign from './source/journey/CreateCampaign';
            </TouchableOpacity>
          )
        }}/>
-       <Tab.Screen name="Exercises" component={Exercises} options={{
+       <Tab.Screen name="Home" component={Home} options={{
          headerRight: () => (
            <TouchableOpacity>
              <Ionicons name="chatbubble"

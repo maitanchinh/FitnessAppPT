@@ -65,7 +65,7 @@ const Students = () => {
                             <Image source={item.avt}
                             style={styes.avt}/>
                             <View style={{flexDirection: 'column', height: 80, justifyContent: 'space-evenly'}}>
-                                <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
+                                <Text style={{fontSize: 20, fontWeight: '500'}}>{item.name}</Text>
                                 <Text>{item.from} - {item.to}</Text>
                                 <Text>{item.class} Class</Text>
                             </View>

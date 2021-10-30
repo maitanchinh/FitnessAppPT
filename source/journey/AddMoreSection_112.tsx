@@ -87,7 +87,7 @@ class AddSection_112 extends React.Component {
                                 }
                             )}
                             style={{
-                                backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 120,
+                                backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 300,
                                 flexDirection: 'row', alignItems: 'center', justifyContent: 'center'
                             }}>
                             <Text>Next</Text>

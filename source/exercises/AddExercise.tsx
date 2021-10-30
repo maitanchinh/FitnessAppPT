@@ -60,27 +60,27 @@ const AddExercise = () => {
         },
     ];
 
-    const takePhotoFromCamera = () => {
-        ImagePicker.openCamera({
-            width: 300,
-            height: 400,
-            cropping: true,
-        }).then(image => {
-            console.log(image);
-        });
-    }
+    // const takePhotoFromCamera = () => {
+    //     ImagePicker.openCamera({
+    //         width: 300,
+    //         height: 400,
+    //         cropping: true,
+    //     }).then(image => {
+    //         console.log(image);
+    //     });
+    // }
 
-    const choosePhotoFromLibrary = () => {
-        console.warn('Choose photo')
-        ImagePicker.openPicker({
-            width: 300,
-            height: 400,
-            cropping: true
-        }).then(image => {
-            console.log(image);
-            setImage(image.path)
-        });
-    }
+    // const choosePhotoFromLibrary = () => {
+    //     console.warn('Choose photo')
+    //     ImagePicker.openPicker({
+    //         width: 300,
+    //         height: 400,
+    //         cropping: true
+    //     }).then(image => {
+    //         console.log(image);
+    //         setImage(image.path)
+    //     });
+    // }
     return (
         <View style={styles.container}>
             <ScrollView style={styles.body} horizontal={false}>
@@ -103,7 +103,7 @@ const AddExercise = () => {
                     <Image source={require('../../asserts/images/no_photo.png')} style={{ resizeMode: 'contain', flex: 1 }} />
                     <TouchableOpacity
                         style={{ alignSelf: 'flex-end', position: 'absolute', top: 131, right: 10 }}
-                        onPress={() => choosePhotoFromLibrary()}>
+                        onPress={() => {}}>
                         <View style={{ width: 60, height: 60, borderRadius: 30, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
                             <Ionicons name="camera" style={{ color: '#97B2FF', fontSize: 50 }} />
                         </View>
@@ -232,11 +232,15 @@ const AddExercise = () => {
                         justifyContent: 'center',
                     }}> */}
                     <TouchableOpacity
+                    onPress={() => navigation.reset({
+                        index: 0,
+                        routes: [{name: 'MyTabs'}],
+                      })}
                         style={{
                             backgroundColor: '#97B2FF',
                             borderRadius: 35,
                             height: 70,
-                            width: 120,
+                            width: 300,
                             flexDirection: 'row',
                             alignItems: 'center',
                             justifyContent: 'center',

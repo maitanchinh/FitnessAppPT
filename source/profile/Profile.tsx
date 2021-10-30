@@ -44,8 +44,8 @@ const Profile = () => {
                     <Image
                         source={require('../../asserts/images/profile_icon.png')}
                         style={{
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             marginHorizontal: 30
                         }} />
                     <Text style={{ fontSize: 22 }}>Personal Profile</Text>
@@ -61,8 +61,8 @@ const Profile = () => {
                     <Image
                         source={require('../../asserts/images/security.png')}
                         style={{
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             marginHorizontal: 30
                         }} />
                     <Text style={{ fontSize: 22 }}>Change Password</Text>
@@ -77,8 +77,8 @@ const Profile = () => {
                     <Image
                         source={require('../../asserts/images/bank.png')}
                         style={{
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             marginHorizontal: 30
                         }} />
                     <Text style={{ fontSize: 22 }}>Bank Link</Text>
@@ -94,8 +94,8 @@ const Profile = () => {
                     <Image
                         source={require('../../asserts/images/discount.png')}
                         style={{
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             marginHorizontal: 30
                         }} />
                     <Text style={{ fontSize: 22 }}>List Discount Campaign</Text>
@@ -111,8 +111,8 @@ const Profile = () => {
                 <Image
                     source={require('../../asserts/images/logout.png')}
                     style={{
-                        height: 50,
-                        width: 50,
+                        height: 40,
+                        width: 40,
                         marginHorizontal: 30
                     }} />
                 <Text style={{ fontSize: 22 }}>Log out</Text>

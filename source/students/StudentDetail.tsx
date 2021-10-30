@@ -83,8 +83,8 @@ const StudentDetail = () => {
                 style={{
                     backgroundColor: '#97B2FF',
                     borderRadius: 35,
-                    height: 40,
-                    width: 150,
+                    height: 70,
+                    width: 300,
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center',

@@ -45,7 +45,7 @@ const CreateJourney = () => {
             <TouchableOpacity onPress={() => {
                navigation.navigate('MyTabs')
             }}
-            style={{backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 120,
+            style={{backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 300,
             flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
               <Text>Done</Text>
             </TouchableOpacity>
@@ -98,9 +98,9 @@ const style = StyleSheet.create({
       color: 'white',
       backgroundColor: "rgb(45,156,219)",
       borderRadius: 10,
-      marginLeft: 75,
+      alignSelf: 'center',
       width: 150,
-      paddingHorizontal: 10,
+      padding: 10,
     }
 })
 const DATA = [

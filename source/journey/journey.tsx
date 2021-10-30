@@ -37,8 +37,7 @@ const style = StyleSheet.create({
     backgroundColor: "rgb(45,156,219)",
     borderRadius: 10,
     width: 200,
-    height: 25,
-    paddingHorizontal: 10,
+    padding: 10,
     justifyContent: 'center',
     alignSelf: 'center'
   },
@@ -48,8 +47,7 @@ const style = StyleSheet.create({
     backgroundColor: "#ff9797",
     borderRadius: 10,
     width: 250,
-    height: 25,
-    paddingHorizontal: 10,
+    padding: 10,
     justifyContent: 'center',
     alignSelf: 'center'
   }

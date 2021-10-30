@@ -88,7 +88,7 @@ const AddSection_114 = () => {
               backgroundColor: '#97B2FF',
               borderRadius: 35,
               height: 70,
-              width: 120,
+              width: 300,
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',

@@ -6,16 +6,6 @@ const AddStep = () => {
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{ height: '6%', width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                <TouchableOpacity style={{ height: '100%', alignItems: 'center', flexDirection: 'row', paddingLeft: 10 }}
-                    onPress={() => {
-                        navigation.goBack()
-                    }}>
-                    {/* <Image source={require('../asserts/icons/back-button.png')} style={{ flex: 1 }} resizeMode="contain" /> */}
-                    <Ionicons name="chevron-back" size={30} />
-                    <Text style={{ fontSize: 20, paddingLeft: 10, fontWeight: '500' }}>Back</Text>
-                </TouchableOpacity>
-            </View>
             <View style={styles.body}>
                 <Text style={{ fontSize: 19, fontWeight: 'bold', marginVertical: 10}}>Picture</Text>
                 <View
@@ -73,11 +63,14 @@ const AddStep = () => {
                         justifyContent: 'space-around',
                     }}>
                     <TouchableOpacity
+                    onPress={() => {
+                        navigation.goBack()
+                    }}
                         style={{
                             backgroundColor: '#97B2FF',
                             borderRadius: 35,
                             height: 70,
-                            width: 120,
+                            width: 300,
                             flexDirection: 'row',
                             alignItems: 'center',
                             justifyContent: 'center',

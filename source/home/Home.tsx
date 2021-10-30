@@ -1,9 +1,11 @@
+import { useNavigation } from "@react-navigation/core";
 import React from "react";
 import { Dimensions, FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const Home = () => {
+    const navigation = useNavigation();
     return (
         <View>
             <View style={{ width: 330, borderRadius: 20, backgroundColor: '#B9CBFF', alignSelf: 'center', padding: 5, marginVertical: 10, alignItems: 'center' }}>
@@ -34,7 +36,8 @@ const Home = () => {
                     }
                 ]}
                 renderItem={({ item }) => (
-                    <TouchableOpacity style={{flexDirection: 'row', backgroundColor: 'white', borderRadius: 20, marginHorizontal: 10, marginVertical: 10, }}>
+                    <TouchableOpacity style={{flexDirection: 'row', backgroundColor: 'white', borderRadius: 20, marginHorizontal: 10, marginVertical: 10, }}
+                    onPress={() => navigation.navigate('Meeting With Student')}>
                         <View style={{ flexDirection: 'column', height: 100, paddingLeft: 20, paddingVertical: 5, justifyContent: 'space-around', flex: 8 }}>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                 <Ionicons name="person" style={styles.icon} />

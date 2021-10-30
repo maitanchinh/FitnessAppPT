@@ -6,22 +6,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RNPickerSelect from 'react-native-picker-select';
 // import SelectDropdown from 'react-native-select-dropdown';
 class EditProfile extends React.Component {
-    // const route = useRoute();
-    // const navigation = useNavigation();
-    // const [openCity, setOpenCity] = useState(false);
-    // const [cityValue, setCityValue] = useState('Hochiminh');
-    // const [city, setCity] = useState([
-    //     { label: 'Ho Chi Minh', value: 'Hochiminh' },
-    //     { label: 'Ha Noi', value: 'Hanoi' },
-    // ]);
-    // const [openDistrict, setOpenDistrict] = useState(false);
-    // const [districtValue, setDistrictValue] = useState('quan1');
-    // const [district, setDistrict] = useState([
-    //     { label: 'Quan 1', value: 'quan1' },
-    //     { label: 'Quan 2', value: 'quan2' },
-    // ]);
     render() {
-        const city = ["Ho Chi Minh", "Ha Noi"]
         return (
             <SafeAreaView style={{ backgroundColor: 'white' }}>
                 <ScrollView style={styles.container}>
@@ -62,24 +47,10 @@ class EditProfile extends React.Component {
                                         fontSize: 20,
                                         color: '#5B5B5B'
                                     }} />
-                                {/* <Text style={{ marginLeft: 40 }}>
-                                    {this.props.route.params.name}
-                                </Text> */}
                                 <TextInput
                                     defaultValue={this.props.route.params.name}
                                     style={{ marginLeft: 40 }}
                                 />
-                                {/* <OutlineInput
-                        label="Fullname"
-                        value={route.params.name}
-                        activeBorderColor='#97B2FF'
-                        activeLabelColor='#97B2FF'
-                        activeValueColor='black'
-                        passiveLabelColor='#5B5B5B'
-                        passiveBorderColor='#97B2FF'
-                        passiveValueColor='black'
-                    /> */}
-
                             </View>
                         </View>
                         <View style={{ height: 40, justifyContent: 'flex-end', marginBottom: 20 }}>
@@ -226,12 +197,6 @@ class EditProfile extends React.Component {
                                 />
                             </View>
                         </View>
-
-                        {/* <OutlineInput
-                    label="Fullname"
-                    value={route.params.name}
-                    passiveLabelColor='black'
-                /> */}
                     </View>
                     <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Address</Text>
                     <View style={{ alignItems: 'center' }}>
@@ -242,7 +207,7 @@ class EditProfile extends React.Component {
                                     label: 'Ho Chi Minh',
                                     value: null
                                 }}
-                                pickerProps={{style: {height: 114, overflow: 'hidden'}}}
+                                pickerProps={{ style: { height: 114, overflow: 'hidden' } }}
                                 onClose={() => { }}
                                 onValueChange={(value) => console.log(value)}
                                 items={[
@@ -322,6 +287,7 @@ class EditProfile extends React.Component {
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
                         <TouchableOpacity
+                            onPress={() => { this.props.navigation.goBack() }}
                             style={{
                                 borderRadius: 35,
                                 borderWidth: 1,
@@ -336,6 +302,7 @@ class EditProfile extends React.Component {
                             <Text>Cancel</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
+                            onPress={() => { this.props.navigation.goBack() }}
                             style={{
                                 backgroundColor: '#97B2FF',
                                 borderRadius: 35,
