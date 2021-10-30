@@ -44,6 +44,7 @@
  import MeetingWithStudent from './source/meeting/MeetingWithStudent';
 import ListCampaign from './source/profile/ListCampaign';
 import CreateCampaign from './source/journey/CreateCampaign';
+import Register from './source/login/register';
  const Tab = createBottomTabNavigator();
  const Stack = createNativeStackNavigator();
  function MyTabs() {
@@ -156,6 +157,7 @@ import CreateCampaign from './source/journey/CreateCampaign';
      <NavigationContainer independent={true}>
        <Stack.Navigator
          screenOptions={{headerShown: true,}}>
+         <Stack.Screen name="Register" component={Register}/>
          <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }}/>
          <Stack.Screen name="Equipments" component={AddSection_111}/>
          <Stack.Screen name="Exercises" component={AddSection_112}/>
