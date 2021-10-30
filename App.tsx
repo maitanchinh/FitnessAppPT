@@ -42,6 +42,8 @@
  import StudentDetail from './source/students/StudentDetail';
  import MeetingSelectExercise from './source/meeting/Meeting_SelectExercise';
  import MeetingWithStudent from './source/meeting/MeetingWithStudent';
+import ListCampaign from './source/profile/ListCampaign';
+import CreateCampaign from './source/journey/CreateCampaign';
  const Tab = createBottomTabNavigator();
  const Stack = createNativeStackNavigator();
  function MyTabs() {
@@ -154,15 +156,15 @@
        <Stack.Navigator
          screenOptions={{headerShown: true,}}>
          <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }}/>
-         <Stack.Screen name="Add More Section 111" component={AddSection_111}/>
-         <Stack.Screen name="Add More Section 112" component={AddSection_112}/>
-         <Stack.Screen name="Add More Section 114" component={AddSection_114}/>
-         <Stack.Screen name="Add More Section 115" component={AddSection_115}/>
-         <Stack.Screen name="AddExercise" component={AddExercise}/>
-         <Stack.Screen name="ExerciseDetail" component={ExerciseDetail}/>
-         <Stack.Screen name="AddStep" component={AddStep}/>
+         <Stack.Screen name="Equipments" component={AddSection_111}/>
+         <Stack.Screen name="Exercises" component={AddSection_112}/>
+         <Stack.Screen name="Information" component={AddSection_114}/>
+         <Stack.Screen name="Details" component={AddSection_115}/>
+         <Stack.Screen name="Add Exercise" component={AddExercise}/>
+         <Stack.Screen name="Exercise Detail" component={ExerciseDetail}/>
+         <Stack.Screen name="Add Step" component={AddStep}/>
          <Stack.Screen name="Chat" component={Chat}  />
-         <Stack.Screen name="ChatBox" component={ChatBox}  />
+         <Stack.Screen name="Chat Box" component={ChatBox}  />
          <Stack.Screen name="Personal Profile" component={PersonalProfile}  />
          <Stack.Screen name="Edit Profile" component={EditProfile}  />
          <Stack.Screen name="Change Password" component={ChangePassword}  />
@@ -170,10 +172,12 @@
          <Stack.Screen name="Create Journey" component={CreateJourney}  />
          <Stack.Screen name="Meeting Select Exercise" component={MeetingSelectExercise}  />
          <Stack.Screen name="Meeting With Student" component={MeetingWithStudent}  />
-         <Stack.Screen name="PictureStep1" component={PictureStep1}  />
-         <Stack.Screen name="PictureStep2" component={PictureStep2}  />
-         <Stack.Screen name="PictureStep3" component={PictureStep3}  />
-         <Stack.Screen name="PictureStep4" component={PictureStep4}  />
+         <Stack.Screen name="Picture Step1" component={PictureStep1}  />
+         <Stack.Screen name="Picture Step2" component={PictureStep2}  />
+         <Stack.Screen name="Picture Step3" component={PictureStep3}  />
+         <Stack.Screen name="Picture Step4" component={PictureStep4}  />
+         <Stack.Screen name="Campaign" component={ListCampaign}  />
+         <Stack.Screen name="Create Discount Campaign" component={CreateCampaign}  />
        </Stack.Navigator>
      </NavigationContainer>
    );

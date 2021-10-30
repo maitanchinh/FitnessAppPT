@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/core';
 import Timeline from 'react-native-timeline-flatlist';
-import ImagePicker from 'react-native-image-crop-picker';
+// import ImagePicker from 'react-native-image-crop-picker';
 
 const AddExercise = () => {
     const [isChoose, setIsChoose] = useState(Boolean);
@@ -220,7 +220,7 @@ const AddExercise = () => {
                         alignItems: 'center',
                         justifyContent: 'space-around'
                     }}
-                    onPress={() => navigation.navigate('AddStep')}>
+                    onPress={() => navigation.navigate('Add Step')}>
                     <AntDesign name="pluscircleo" style={{ fontSize: 20, color: 'white' }} />
                     <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'white' }}>Add more step</Text>
                 </TouchableOpacity>

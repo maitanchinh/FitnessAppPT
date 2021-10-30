@@ -15,7 +15,7 @@ const CreateJourney = () => {
         <TextInput style={style.longInput}/>
         <Text style={style.title}>Price (VND)</Text>
         <TextInput keyboardType='numeric' style={style.priceInput}/>
-        <View style={style.journey}>
+        <ScrollView style={style.journey} horizontal={true} scrollEnabled={false}>
             <Timeline
               data={DATA}
               circleSize={20}
@@ -34,23 +34,16 @@ const CreateJourney = () => {
                 style: {paddingTop: 5},
               }}
             />
-          </View>
+          </ScrollView>
           <TouchableOpacity onPress={() => {
-               navigation.navigate('Add More Section 111')
+               navigation.navigate('Equipments')
             }}
             style={style.custombutton}>
               <Text style={{textAlign:'center'}}>Add more</Text>
             </TouchableOpacity>
           <View style={{marginTop: 50,flexDirection: 'row', justifyContent: 'space-around'}}>
             <TouchableOpacity onPress={() => {
-               navigation.goBack
-            }}
-            style={{borderWidth: 1, borderRadius: 35, height: 70, width: 120, 
-            borderColor: '#97B2FF', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <Text style={{color: '#97B2FF'}}>Back</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => {
-               navigation.navigate('Journey')
+               navigation.navigate('MyTabs')
             }}
             style={{backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 120,
             flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>

@@ -37,7 +37,7 @@ class Chat extends React.Component {
                     ]}
                     renderItem={({ item }) => (
                         <TouchableOpacity style={styles.conversation}
-                            onPress={() => this.props.navigation.navigate('ChatBox',
+                            onPress={() => this.props.navigation.navigate('Chat Box',
                             {
                                 name: item.name,
                                 message: item.message,

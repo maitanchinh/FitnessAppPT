@@ -14,10 +14,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 
 const AddSection_115 = () => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -181,6 +181,10 @@ const AddSection_115 = () => {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <TouchableOpacity
+            onPress={() => navigation.reset({
+              index: 0,
+              routes: [{name: 'Create Journey'}],
+            })}
               style={{
                 backgroundColor: '#97B2FF',
                 borderRadius: 35,

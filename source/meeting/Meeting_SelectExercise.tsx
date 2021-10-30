@@ -81,16 +81,15 @@ class MeetingSelectExercise extends React.Component {
                 <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('Add More Section 114',
-                                {
-                                    exercises: this.state.selectedIds
-                                }
-                            )}
+                            onPress={() => this.props.navigation.reset({
+                                index: 0,
+                                routes: [{name: 'Meeting With Student'}],
+                              })}
                             style={{
                                 backgroundColor: '#97B2FF', borderRadius: 35, height: 70, width: 120,
                                 flexDirection: 'row', alignItems: 'center', justifyContent: 'center'
                             }}>
-                            <Text>Next</Text>
+                            <Text>Finish</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

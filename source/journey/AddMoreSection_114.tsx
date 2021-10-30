@@ -83,7 +83,7 @@ const AddSection_114 = () => {
             marginBottom: 30,
           }}>
           <TouchableOpacity
-          onPress={() => navigation.navigate('Add More Section 115')}
+          onPress={() => navigation.navigate('Details')}
             style={{
               backgroundColor: '#97B2FF',
               borderRadius: 35,

@@ -196,7 +196,7 @@ export default class Exercise extends Component {
                     />
                 </View>
                 <View style={styles.touchableOpacityStyle}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('AddExercise')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Add Exercise')}>
                         <Text style={{ fontSize: 35, fontWeight: '300', color: 'white' }}>+</Text>
                     </TouchableOpacity>
                 </View>

@@ -81,7 +81,7 @@ class AddSection_112 extends React.Component {
                 <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                         <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('Add More Section 114',
+                            onPress={() => this.props.navigation.navigate('Information',
                                 {
                                     exercises: this.state.selectedIds
                                 }

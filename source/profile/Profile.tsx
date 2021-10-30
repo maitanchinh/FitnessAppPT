@@ -83,6 +83,23 @@ const Profile = () => {
                         }} />
                     <Text style={{ fontSize: 22 }}>Bank Link</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                onPress={() => navigation.navigate('Campaign')}
+                    style={{
+                        flexDirection: 'row',
+                        // justifyContent: 'space-evenly',
+                        marginTop: 20,
+                        alignItems: 'center'
+                    }}>
+                    <Image
+                        source={require('../../asserts/images/discount.png')}
+                        style={{
+                            height: 50,
+                            width: 50,
+                            marginHorizontal: 30
+                        }} />
+                    <Text style={{ fontSize: 22 }}>List Discount Campaign</Text>
+                </TouchableOpacity>
             </View>
             <View
                 style={{
