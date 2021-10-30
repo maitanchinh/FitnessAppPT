@@ -45,6 +45,7 @@
 import ListCampaign from './source/profile/ListCampaign';
 import CreateCampaign from './source/journey/CreateCampaign';
 import Register from './source/login/register';
+import Login from './source/login/login';
  const Tab = createBottomTabNavigator();
  const Stack = createNativeStackNavigator();
  function MyTabs() {
@@ -157,6 +158,7 @@ import Register from './source/login/register';
      <NavigationContainer independent={true}>
        <Stack.Navigator
          screenOptions={{headerShown: true,}}>
+         <Stack.Screen name="Login" component={Login}/>
          <Stack.Screen name="Register" component={Register}/>
          <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }}/>
          <Stack.Screen name="Equipments" component={AddSection_111}/>
