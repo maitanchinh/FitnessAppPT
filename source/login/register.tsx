@@ -6,6 +6,12 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RNPickerSelect from 'react-native-picker-select';
 // import SelectDropdown from 'react-native-select-dropdown';
 class Register extends React.Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+          popup: false
+        }
+     }
     render() {
         return (
             <SafeAreaView style={{ backgroundColor: 'white' }}>
@@ -303,7 +309,7 @@ class Register extends React.Component {
                             <Text>Cancel</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            onPress={() => { this.props.navigation.navigate('MyTabs') }}
+                            onPress={() => {this.setState({popup: true})}}
                             style={{
                                 backgroundColor: '#97B2FF',
                                 borderRadius: 35,
@@ -318,6 +324,41 @@ class Register extends React.Component {
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
+                <Modal
+                    transparent={true}
+                    visible={this.state.popup}>
+                    <View style={{ backgroundColor: '#000000aa', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                        <View
+                            style={{
+                                backgroundColor: 'white',
+                                borderRadius: 24,
+                                borderWidth: 1,
+                                borderColor: '#97B2FF',
+                                height: 130,
+                                width: 330,
+                                justifyContent: 'space-around',
+                                alignItems: 'center'
+                            }}>
+                            <Text style={styles.title}>Thanks you for apply. Waiting for admin approve.</Text>
+                            <TouchableOpacity
+                                style={{
+                                    height: 28,
+                                    width: 82,
+                                    borderRadius: 41,
+                                    backgroundColor: '#97B2FF',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    // position: 'absolute',
+                                    // right: 10,
+                                    // bottom: 10
+                                }}
+                                onPress={() => { this.setState({popup: false}) 
+                                this.props.navigation.goBack()}}>
+                                <Text style={{ fontSize: 16 }}>Ok</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
             </SafeAreaView>
         );
     }
@@ -326,7 +367,13 @@ class Register extends React.Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white'
-    }
+    },
+    title: {
+        fontSize: 19,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        marginTop: 20,
+    },
 })
 
 export default Register;
