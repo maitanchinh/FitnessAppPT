@@ -266,6 +266,11 @@ class PersonalProfile extends React.Component {
                                 placeholder="280/29 Bui Huu Nghia" />
                         </View>
                     </View>
+                    <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                        <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Categories</Text>
+                        <Text style={{width: 150, fontSize: 14, marginLeft: 30}}>#LoseWeight, #GetFit,
+                            #ForHealth,  #Yoga</Text>
+                    </View>
                     <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Year Experience</Text>
                     <View style={{ justifyContent: 'center', width: 252, marginBottom: 20, alignItems: 'center', alignSelf: 'center' }}>
                         <RNPPickerSelect

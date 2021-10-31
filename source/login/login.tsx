@@ -57,7 +57,7 @@ const Login = () => {
       </View>
       
       <TouchableOpacity
-        onPress={() => {navigation.navigate('Home')}}
+        onPress={() => {navigation.navigate('MyTabs')}}
         style={{
           height: 50,
           width: width*0.9,

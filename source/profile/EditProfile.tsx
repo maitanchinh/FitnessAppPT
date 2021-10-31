@@ -3,9 +3,22 @@ import React, { useState } from "react";
 import { Dimensions, FlatList, Image, Modal, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 import RNPickerSelect from 'react-native-picker-select';
 // import SelectDropdown from 'react-native-select-dropdown';
 class EditProfile extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            cate1: true,
+            cate2: true,
+            cate3: true,
+            cate4: true,
+            cate5: false,
+            cate6: false,
+            otherCate: false
+        }
+    }
     render() {
         return (
             <SafeAreaView style={{ backgroundColor: 'white' }}>
@@ -271,6 +284,67 @@ class EditProfile extends React.Component {
                                 placeholder="280/29 Bui Huu Nghia" />
                         </View>
                     </View>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Categories</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, width: 250, alignSelf: 'center' }}>
+                        <TouchableOpacity
+                            onPress={() =>  this.state.cate1 ? this.setState({cate1: false}) : this.setState({cate1: true})}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate1 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{fontSize: 16}}>Lose Weight</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() =>  this.state.cate2 ? this.setState({cate2: false}) : this.setState({cate2: true})}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate2 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{fontSize: 16}}>Get Fit</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, width: 250, alignSelf: 'center' }}>
+                        <TouchableOpacity
+                            onPress={() =>  this.state.cate3 ? this.setState({cate3: false}) : this.setState({cate3: true})}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate3 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{fontSize: 16}}>For Health</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() =>  this.state.cate4 ? this.setState({cate4: false}) : this.setState({cate4: true})}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate4 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{fontSize: 16}}>Yoga</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, width: 250, alignSelf: 'center' }}>
+                        <TouchableOpacity
+                            onPress={() =>  this.state.cate5 ? this.setState({cate5: false}) : this.setState({cate5: true})}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate5 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{fontSize: 16}}>Aerobic</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() =>  this.state.cate6 ? this.setState({cate6: false}) : this.setState({cate6: true})}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate6 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{fontSize: 16}}>Cardio</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity
+                        onPress={() => this.state.otherCate ? this.setState({ otherCate: false }) : this.setState({ otherCate: true })}
+                        style={{ flexDirection: 'row', alignItems: 'center', width: 150, marginLeft: 30, marginBottom: 10 }}>
+                        <Fontisto name={this.state.otherCate ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                        <Text style={{ fontSize: 16 }}>Other categories</Text>
+                    </TouchableOpacity>
+                    <TextInput
+                        style={{
+                            width: 252,
+                            borderColor: '#97B2FF',
+                            borderRadius: 10,
+                            borderWidth: 1,
+                            height: 32,
+                            padding: 5,
+                            alignSelf: 'center',
+                            marginBottom: 20
+                        }} 
+                        placeholder="Other Categories ..."/>
                     <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Year Experience</Text>
                     <View style={{ justifyContent: 'center', width: 252, marginBottom: 20, alignItems: 'center', alignSelf: 'center' }}>
                         <RNPickerSelect

@@ -101,7 +101,8 @@ const Profile = () => {
                     <Text style={{ fontSize: 22 }}>List Discount Campaign</Text>
                 </TouchableOpacity>
             </View>
-            <View
+            <TouchableOpacity
+            onPress={() => navigation.navigate('Login')}
                 style={{
                     backgroundColor: 'white',
                     flex: 1,
@@ -116,7 +117,7 @@ const Profile = () => {
                         marginHorizontal: 30
                     }} />
                 <Text style={{ fontSize: 22 }}>Log out</Text>
-            </View>
+            </TouchableOpacity>
         </View>
     );
 }

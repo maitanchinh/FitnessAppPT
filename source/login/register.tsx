@@ -4,14 +4,21 @@ import { Dimensions, FlatList, Image, Modal, SafeAreaView, ScrollView, StyleShee
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RNPickerSelect from 'react-native-picker-select';
-// import SelectDropdown from 'react-native-select-dropdown';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 class Register extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props)
         this.state = {
-          popup: false
+            popup: false,
+            cate1: false,
+            cate2: false,
+            cate3: false,
+            cate4: false,
+            cate5: false,
+            cate6: false,
+            otherCate: false
         }
-     }
+    }
     render() {
         return (
             <SafeAreaView style={{ backgroundColor: 'white' }}>
@@ -61,7 +68,7 @@ class Register extends React.Component {
                                         color: '#5B5B5B'
                                     }} />
                                 <TextInput
-                                    style={{ marginLeft: 40 }}
+                                    style={{ marginLeft: 40, width: 200 }}
                                 />
                             </View>
                         </View>
@@ -96,7 +103,8 @@ class Register extends React.Component {
                                         color: '#5B5B5B'
                                     }} />
                                 <TextInput
-                                    style={{ marginLeft: 40 }}
+                                    style={{ marginLeft: 40, width: 200 }}
+                                    keyboardType='numeric'
                                 />
                             </View>
                         </View>
@@ -131,7 +139,79 @@ class Register extends React.Component {
                                         color: '#5B5B5B'
                                     }} />
                                 <TextInput
-                                    style={{ marginLeft: 40 }}
+                                    style={{ marginLeft: 40, width: 200 }}
+                                />
+                            </View>
+                        </View>
+                        <View style={{ height: 40, justifyContent: 'flex-end', marginBottom: 20 }}>
+                            <View
+                                style={{
+                                    backgroundColor: 'white',
+                                    position: 'absolute',
+                                    left: 30,
+                                    bottom: 25,
+                                    zIndex: 1,
+                                    paddingHorizontal: 3
+                                }}>
+                                <Text style={{ color: '#5B5B5B' }}>Password</Text>
+                            </View>
+                            <View
+                                style={{
+                                    borderRadius: 12,
+                                    flexDirection: 'row',
+                                    width: 252,
+                                    height: 32,
+                                    borderWidth: 1,
+                                    borderColor: '#97B2FF',
+                                    alignItems: 'center'
+                                }}>
+                                <Ionicons name="lock-closed-outline"
+                                    style={{
+                                        left: 5,
+                                        alignSelf: 'center',
+                                        position: 'absolute',
+                                        fontSize: 20,
+                                        color: '#5B5B5B'
+                                    }} />
+                                <TextInput
+                                    style={{ marginLeft: 40, width: 200 }}
+                                    secureTextEntry={true}
+                                />
+                            </View>
+                        </View>
+                        <View style={{ height: 40, justifyContent: 'flex-end', marginBottom: 20 }}>
+                            <View
+                                style={{
+                                    backgroundColor: 'white',
+                                    position: 'absolute',
+                                    left: 30,
+                                    bottom: 25,
+                                    zIndex: 1,
+                                    paddingHorizontal: 3
+                                }}>
+                                <Text style={{ color: '#5B5B5B' }}>Confirm</Text>
+                            </View>
+                            <View
+                                style={{
+                                    borderRadius: 12,
+                                    flexDirection: 'row',
+                                    width: 252,
+                                    height: 32,
+                                    borderWidth: 1,
+                                    borderColor: '#97B2FF',
+                                    alignItems: 'center'
+                                }}>
+                                <Ionicons name="lock-closed-outline"
+                                    style={{
+                                        left: 5,
+                                        alignSelf: 'center',
+                                        position: 'absolute',
+                                        fontSize: 20,
+                                        color: '#5B5B5B'
+                                    }} />
+                                <TextInput
+                                    style={{ marginLeft: 40, width: 200 }}
+                                    secureTextEntry={true}
                                 />
                             </View>
                         </View>
@@ -166,7 +246,7 @@ class Register extends React.Component {
                                         color: '#5B5B5B'
                                     }} />
                                 <TextInput
-                                    style={{ marginLeft: 40 }}
+                                    style={{ marginLeft: 40, width: 200 }}
                                 />
                             </View>
                         </View>
@@ -201,7 +281,7 @@ class Register extends React.Component {
                                         color: '#5B5B5B'
                                     }} />
                                 <TextInput
-                                    style={{ marginLeft: 40 }}
+                                    style={{ marginLeft: 40, width: 200 }}
                                 />
                             </View>
                         </View>
@@ -278,6 +358,67 @@ class Register extends React.Component {
                                 }} />
                         </View>
                     </View>
+                    <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Categories</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, width: 250, alignSelf: 'center' }}>
+                        <TouchableOpacity
+                            onPress={() => this.state.cate1 ? this.setState({ cate1: false }) : this.setState({ cate1: true })}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate1 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{ fontSize: 16 }}>Lose Weight</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.state.cate2 ? this.setState({ cate2: false }) : this.setState({ cate2: true })}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate2 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{ fontSize: 16 }}>Get Fit</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, width: 250, alignSelf: 'center' }}>
+                        <TouchableOpacity
+                            onPress={() => this.state.cate3 ? this.setState({ cate3: false }) : this.setState({ cate3: true })}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate3 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{ fontSize: 16 }}>For Health</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.state.cate4 ? this.setState({ cate4: false }) : this.setState({ cate4: true })}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate4 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{ fontSize: 16 }}>Yoga</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, width: 250, alignSelf: 'center' }}>
+                        <TouchableOpacity
+                            onPress={() => this.state.cate5 ? this.setState({ cate5: false }) : this.setState({ cate5: true })}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate5 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{ fontSize: 16 }}>Aerobic</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this.state.cate6 ? this.setState({ cate6: false }) : this.setState({ cate6: true })}
+                            style={{ flexDirection: 'row', alignItems: 'center', width: 100 }}>
+                            <Fontisto name={this.state.cate6 ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                            <Text style={{ fontSize: 16 }}>Cardio</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity
+                        onPress={() => this.state.otherCate ? this.setState({ otherCate: false }) : this.setState({ otherCate: true })}
+                        style={{ flexDirection: 'row', alignItems: 'center', width: 150, marginLeft: 30, marginBottom: 10 }}>
+                        <Fontisto name={this.state.otherCate ? "checkbox-active" : "checkbox-passive"} style={{ fontSize: 20, marginRight: 20 }} />
+                        <Text style={{ fontSize: 16 }}>Other categories</Text>
+                    </TouchableOpacity>
+                    <TextInput
+                        style={{
+                            width: 252,
+                            borderColor: '#97B2FF',
+                            borderRadius: 10,
+                            borderWidth: 1,
+                            height: 32,
+                            padding: 5,
+                            alignSelf: 'center',
+                            marginBottom: 20
+                        }} 
+                        placeholder="Other Categories ..."/>
                     <Text style={{ fontSize: 19, fontWeight: 'bold', marginLeft: 30, marginBottom: 10 }}>Year Experience</Text>
                     <View style={{ justifyContent: 'center', width: 252, marginBottom: 20, alignItems: 'center', alignSelf: 'center' }}>
                         <RNPickerSelect
@@ -309,7 +450,7 @@ class Register extends React.Component {
                             <Text>Cancel</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            onPress={() => {this.setState({popup: true})}}
+                            onPress={() => { this.setState({ popup: true }) }}
                             style={{
                                 backgroundColor: '#97B2FF',
                                 borderRadius: 35,
@@ -352,8 +493,10 @@ class Register extends React.Component {
                                     // right: 10,
                                     // bottom: 10
                                 }}
-                                onPress={() => { this.setState({popup: false}) 
-                                this.props.navigation.goBack()}}>
+                                onPress={() => {
+                                    this.setState({ popup: false })
+                                    this.props.navigation.goBack()
+                                }}>
                                 <Text style={{ fontSize: 16 }}>Ok</Text>
                             </TouchableOpacity>
                         </View>
